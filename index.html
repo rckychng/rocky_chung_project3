@@ -4,84 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Untitled Project</title>
+    <title>Danny Pack</title>
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="styles/animate.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div class="battle">
+    <div class="background">
+        
+        <div class="battle">
 
-        <!-- START STARTS -->
-        <section class="start">
-            <p class="start__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, in. Possimus, amet inventore quaerat doloremque alias dicta, excepturi vel delectus beatae natus et minus quisquam, animi molestiae libero repellendus obcaecati non reiciendis voluptates. Consectetur saepe, velit eum molestias doloribus facilis nesciunt nostrum reprehenderit veritatis, repellat accusamus animi dolores, consequatur iure.</p>
-            <button class="start__button">START</button>
-        </section>
+            <!-- START STARTS -->
+            <section class="start">
+                <h1 class="start__title">Danny Pack</h1>
+                <h3 class="start__subtitle">Gotta collect 'em all!</h3>
+                <button class="button start__button">START</button>
+            </section>
 
-        <!-- OPPONENT STARTS -->
-        <section class="opponent">
-            <div class="opponent__info">
-                <div class="opponent__text">
-                    <h2 class="opponent__name">OPPONENT</h2>
-                    <h2 class="opponent__level">Lv50</h2>
-                </div>              
-                <div class="opponent__health">
-                    <div class="opponent__health-tag">
-                        <h3 class="opponent__health-text">HP</h3>
-                    </div>
-                    <div class="opponent__health-bar">
-                        <div class="opponent__health-bar--fill"></div>
+            <section class="victory">
+                <h2 class="victory__text">Wild CSS defeated!</h2>
+                <button class="button restart__button">Play Again</button>
+                <!-- <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+            </section>
+
+            <section class="capture">
+                <h2 class="capture__text">Wild CSS collected!</h2>
+                <button class="button restart__button">Play Again</button>
+                <!-- <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+            </section>
+
+            <section class="flee">
+                <h2 class="flee__text">Fled from the wild CSS!</h2>
+                <button class="button restart__button">Play Again</button>
+                <!-- <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+            </section>
+
+            <!-- <section class="special">
+                <h1 class="special__text">Sweet()</h1>
+            </section> -->
+
+            <div class="blink"></div>
+
+            <!-- OPPONENT STARTS -->
+            <section class="opponent">
+                <div class="opponent__info">
+                    <div class="opponent__box">
+                        <div class="opponent__text">
+                            <h2 class="opponent__name">CSS</h2>
+                            <h2 class="opponent__level">Lv50</h2>
+                        </div>              
+                        <div class="opponent__health">
+                            <div class="opponent__health-tag">
+                                <h3 class="opponent__health-text">HP</h3>
+                            </div>
+                            <div class="opponent__health-bar">
+                                <div class="opponent__health-bar--fill"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="opponent__sprite">
-                <img class="opponent__image" src="" alt="">
-            </div>
-        </section>
-        <!-- OPPONENT ENDS -->
-        
-        <!-- PLAYER STARTS -->
-        <section class="player">
-            <div class="player__info">
-                <div class="player__text">
-                    <h2 class="player__name">PLAYER</h2>
-                    <h2 class="player__level">Lv50</h2>
-                </div>              
-                <div class="player__health">
-                    <div class="player__health-tag">
-                        <h3 class="player__health-text">HP</h3>
-                    </div>
-                    <div class="player__health-bar">
-                        <div class="player__health-bar--fill"></div>
+                <div class="opponent__sprite">
+                    <div id="opponent__error1" class="opponent__error opponent__error1"></div>
+                    <div id="opponent__error2" class="opponent__error opponent__error2"></div>
+                    <div id="opponent__error3" class="opponent__error opponent__error3"></div>
+                    <img class="opponent__image animated pulse infinite" src="./images/css.png" alt="CSS Logo">
+                </div>
+            </section>
+            <!-- OPPONENT ENDS -->
+            
+            <!-- PLAYER STARTS -->
+            <section class="player">
+                <div class="player__info">
+                    <div class="player__box">
+                        <div class="player__text">
+                            <h2 class="player__name">DANNY</h2>
+                            <h2 class="player__level">Lv50</h2>
+                        </div>              
+                        <div class="player__health">
+                            <div class="player__health-tag">
+                                <h3 class="player__health-text">HP</h3>
+                            </div>
+                            <div class="player__health-bar">
+                                <div class="player__health-bar--fill"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="player__sprite">
-                <img class="player__image" src="" alt="">
-            </div>
-        </section>
-        <!-- PLAYER ENDS -->
-        
-        <!-- MENU STARTS -->
-        <section class="menu">
-            <div class="menu__info">
-                <p class="menu__text">What will PLAYER do?</p>
-            </div>
-            <div class="menu__buttons">
-                <button class="menu__buttons--red">Attack</button>
-                <button class="menu__buttons--green">Special</button>
-                <button class="menu__buttons--yellow">Capture</button>
-                <button class="menu__buttons--blue">Run</button>
-            </div>
-        </section>
-        <!-- MENU ENDS -->
-    </div><!-- BATTLE ENDS -->
+                <div class="player__sprite">
+                    <div id="player__style1" class="player__style"></div>
+                    <div id="player__style2" class="player__style"></div>
+                    <div id="player__style3" class="player__style"></div>
+                    <img class="player__image animated pulse infinite" src="./images/danny.png" alt="Danny">
+                </div>
+            </section>
+            <!-- PLAYER ENDS -->
+            
+            <!-- MENU STARTS -->
+            <section class="menu">
+                <div class="menu__info">
+                    <p class="menu__text"></p>
+                </div>
+                <div class="menu__buttons">
+                    <button class="menu__button menu__button--yellow">Style</button>
+                    <button class="menu__button menu__button--orange">Function</button>
+                    <button class="menu__button menu__button--pink">Fanny</br>Pack</button>
+                    <button class="menu__button menu__button--blue">Run</button>
+                </div>
+            </section>
+            <!-- MENU ENDS -->
+        </div><!-- BATTLE ENDS -->
 
-    <audio id="battle" src="/audio/battle_theme.mp3"></audio>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    
+    </div><!-- BACKGROUND ENDS -->
+
+    <!-- AUDIO STARTS -->
+    <audio id="audio__battle" src="./audio/battle_theme.mp3"></audio>
+    <audio id="audio__victory" src="./audio/victory_theme.mp3"></audio>
+    <!-- AUDIO ENDS -->
     
     <!-- SCRIPTS STARTS -->
     <script defer src="fontawesome/fontawesome-all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="scripts/scripts.js"></script>
+    <script>
+        window.twttr = (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function (f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
     <!-- SCRIPTS ENDS -->
 
 </body>

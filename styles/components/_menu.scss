@@ -1,0 +1,69 @@
+.menu {
+    height: 25%;
+    background-color: black;
+    z-index: 9;
+    &__info {
+        height: 50%;
+        border: 10px solid black;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+    }
+    &__text {
+        overflow-wrap: break-word;
+    }
+    &__buttons {
+        height: 50%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 10px;
+        padding-top: 0;
+    }
+    &__button {
+        width: 24%;
+        padding: 0;
+        border: 0;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        line-height: 1.4;
+        text-transform: uppercase;
+        color: white;
+        text-shadow: 1px 1px 3px black;
+        opacity: 1;
+        &--yellow {
+            background-color: gold;
+            box-shadow: inset 0 0 15px darkorange;
+            &:hover {
+                background-color: orange;
+                box-shadow: inset 0 0 15px orangered;
+            }
+        }
+        &--orange {
+            background-color: orangered;
+            box-shadow: inset 0 0 15px darkred;
+            &:hover {
+                background-color: crimson;
+                box-shadow: inset 0 0 15px darkred;
+            }
+        }
+        &--pink {
+            background-color: hotpink;
+            box-shadow: inset 0 0 15px mediumvioletred;
+            &:hover {
+                background-color: deeppink;
+                box-shadow: inset 0 0 15px mediumvioletred;
+            }
+        }
+        &--blue {
+            background-color: dodgerblue;
+            box-shadow: inset 0 0 15px darkblue;
+            &:hover {
+                background-color: royalblue;
+                box-shadow: inset 0 0 15px darkblue;
+            }
+        }
+    }
+}
