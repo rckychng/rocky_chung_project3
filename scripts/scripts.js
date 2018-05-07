@@ -457,7 +457,7 @@ myApp.restart = () => {
         }, 3000);
         $(".flee").fadeOut(3000);
         setTimeout(() => {
-            $(".capture").css("display", "none");
+            $(".flee").css("display", "none");
         }, 3000);
     });
 };
