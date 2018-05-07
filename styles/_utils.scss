@@ -1,5 +1,5 @@
 .background {
-    background-color: pink;
+    background-color: hotpink;
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
@@ -127,7 +127,7 @@
 
 .special {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 15;
@@ -136,7 +136,27 @@
         letter-spacing: 2px;
         text-transform: uppercase;
         color: red;
-        transform: rotate(-30deg) skew(-25deg);
-        text-shadow: -1px 1px firebrick, -2px 2px firebrick, -3px 3px firebrick, -4px 4px firebrick, -5px 5px firebrick, -6px 6px firebrick;
+        transform: rotate(-30deg) skew(-30deg);
+        text-shadow: -1px 1px gold, -2px 2px gold, -3px 3px gold, -4px 4px gold, -5px 5px gold, -6px 6px gold;
+    }
+}
+
+
+// MEDIA QUERY
+
+@media (max-width: 640px) {
+    .battle {
+        width: 450px;
+        height: 400px;
+    }
+    .start{
+        &__subtitle {
+            font-size: 1rem;
+        }
+    }
+    .special {
+        &__text {
+            font-size: 3rem;
+        }
     }
 }

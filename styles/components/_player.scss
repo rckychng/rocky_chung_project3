@@ -15,7 +15,6 @@
         border: 5px solid dimgrey;
         padding: 15px;
         display: none;
-        // display: flex;
         flex-flow: column nowrap;
         justify-content: center;
     }
@@ -76,8 +75,8 @@
     }
     &__style {
         position: absolute;
-        top: -5%;
-        left: 50%;
+        top: -17%;
+        left: 55%;
         transform: translateX(-50%);
         width: 100%;
         font-size: 1.3rem;
@@ -89,7 +88,48 @@
         z-index: 5;
         position: absolute;
         right: -300%;
-        // left: 25%;
         transform: translateX(-50%);
+    }
+}
+
+
+// MEDIA QUERY
+
+@media (max-width: 640px) {
+    .player {
+        &__info {
+            padding-right: 15px;
+        }
+        &__box {
+            height: 75px;
+            padding: 10px;
+        }
+        &__text {
+            margin-bottom: 7.5px;
+        }
+        &__health {
+            margin-right: 2.5px;
+        }
+        &__health-tag {
+            width: 25px;
+            border-radius: 5px 0 0 5px;
+            box-shadow: 0 0 0 2.5px black;
+        }
+        &__health-bar {
+            height: 10px;
+            background-color: darkgrey;
+            border-radius: 0 5px 5px 0;
+            box-shadow: 0 0 0 2.5px black;
+        }
+        &__health-bar--fill {
+            height: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+        &__style {
+            font-size: 1rem;
+        }
+        &__image {
+            width: 65%;
+        }
     }
 }

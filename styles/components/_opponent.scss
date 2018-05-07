@@ -15,7 +15,6 @@
         border: 5px solid dimgrey;
         padding: 15px;
         display: none;
-        // display: flex;
         flex-flow: column nowrap;
         justify-content: center;
     }
@@ -102,8 +101,62 @@
         z-index: 5;
         position: absolute;
         left: -300%;
-        // left: 20%;
         bottom: -10%;
         transform: translateX(-50%);
+    }
+    &__capture {
+        display: none;
+        z-index: 5;
+    }
+}
+
+
+// MEDIA QUERY
+
+@media (max-width: 640px) {
+    .opponent {
+        &__info {
+            padding-left: 15px;
+        }
+        &__box {
+            height: 75px;
+            padding: 10px;
+        }
+        &__text {
+            margin-bottom: 7.5px;
+        }
+        &__health {
+            margin-right: 2.5px;
+        }
+        &__health-tag {
+            width: 25px;
+            border-radius: 5px 0 0 5px;
+            box-shadow: 0 0 0 2.5px black;
+        }
+        &__health-bar {
+            height: 10px;
+            background-color: darkgrey;
+            border-radius: 0 5px 5px 0;
+            box-shadow: 0 0 0 2.5px black;
+        }
+        &__health-bar--fill {
+            height: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+        &__error1 {
+            font-size: 2.4rem;
+        }
+        &__error2 {
+            font-size: 3.6rem;
+        }
+        &__error3 {
+            font-size: 1.8rem;
+        }
+        &__image {
+            width: 60%;
+        }
+        &__capture {
+            width: 75%;
+        }
     }
 }

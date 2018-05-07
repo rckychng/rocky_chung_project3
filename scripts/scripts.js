@@ -20,16 +20,18 @@ myApp.opponent = {
             setTimeout(() => {
                 clearInterval(errorThree);
             }, 3000);
+            setTimeout(() => {
+                $(".opponent__error").fadeOut(900);
+            }, 3000);
+        }, 4500);
+        setTimeout(() => {
             $(".player__health-bar--fill").css("width", "-=10%");
             if (myApp.player.health <= 60 && myApp.player.health > 30) {
                 $(".player__health-bar--fill").css("background-color", "orange")
             } else if (myApp.player.health <= 30) {
                 $(".player__health-bar--fill").css("background-color", "red")
             }
-            setTimeout(() => {
-                $(".opponent__error").fadeOut(1200);
-            }, 3000);
-        }, 3000);
+        }, 7500);
     },
 };
 
@@ -39,30 +41,48 @@ myApp.player = {
         myApp.opponent.health = myApp.opponent.health - 15;
         $(".menu__text").html("DANNY styles the wild CSS!");
         myApp.styleOption();
-        $(".opponent__health-bar--fill").css("width", "-=15%");
-        if (myApp.opponent.health <= 60 && myApp.opponent.health > 30) {
-            $(".opponent__health-bar--fill").css("background-color", "orange")
-        } else if (myApp.opponent.health <= 30) {
-            $(".opponent__health-bar--fill").css("background-color", "red")
-        } 
+        setTimeout(() => {
+            $(".opponent__health-bar--fill").css("width", "-=15%");
+            if (myApp.opponent.health <= 60 && myApp.opponent.health > 30) {
+                $(".opponent__health-bar--fill").css("background-color", "orange")
+            } else if (myApp.opponent.health <= 30) {
+                $(".opponent__health-bar--fill").css("background-color", "red")
+            }
+        }, 3000);
     },
     specialAttack: function () {
         myApp.opponent.health = myApp.opponent.health - 35;
         $(".menu__text").html("DANNY calls a function!");
-        $(".opponent__health-bar--fill").css("width", "-=35%");
-        if (myApp.opponent.health <= 60 && myApp.opponent.health > 30) {
-            $(".opponent__health-bar--fill").css("background-color", "orange")
-        } else if (myApp.opponent.health <= 30) {
-            $(".opponent__health-bar--fill").css("background-color", "red")
-        } 
+        $(".player__image").animate({
+            left: "5%"
+        }, 900);
+        myApp.specialText();
+        setTimeout(() => {
+            $(".opponent__health-bar--fill").css("width", "-=35%");
+            if (myApp.opponent.health <= 60 && myApp.opponent.health > 30) {
+                $(".opponent__health-bar--fill").css("background-color", "orange")
+            } else if (myApp.opponent.health <= 30) {
+                $(".opponent__health-bar--fill").css("background-color", "red")
+            }
+        }, 3000);
+        setTimeout(() => {
+            $(".player__image").animate({
+                left: "25%"
+            }, 900);
+        }, 3000);
     },
     capture: function () {
         if (myApp.opponent.health <= 40) {
-            $(".menu__text").html("Wild CSS collected!");
-            myApp.battleTheme.pause();
-            myApp.victoryTheme.play();
+            $(".opponent__image").fadeOut(1200);
+            $(".opponent__capture").fadeIn(900).css("display", "block");
+            $(".menu__text").html("DANNY threw his fanny pack!");
             setTimeout(() => {
-                $(".capture").fadeIn(1500).css("display", "flex");
+                $(".menu__text").html("Wild CSS collected!");
+                myApp.battleTheme.pause();
+                myApp.victoryTheme.play();
+                setTimeout(() => {
+                    $(".capture").fadeIn(1500).css("display", "flex");
+                }, 3000);
             }, 3000);
         } else {
             $(".menu__text").html("Wild CSS still not styled enough!");
@@ -89,42 +109,42 @@ myApp.player = {
 myApp.defaultMenuText = () => {
     setTimeout(() => {
         $(".menu__text").html("What will DANNY do?");
-    }, 6000);
+    }, 9000);
 };
 
 myApp.opacityButton = () => {
     $(".menu__button").css("opacity", "0.5");
     setTimeout(() => {
         $(".menu__button").css("opacity", "1");
-    }, 6000);
+    }, 9000);
 };
 
 myApp.disableYellowButton = () => {
     $(".menu__button--yellow").attr("disabled", true);
     setTimeout(() => {
         $(".menu__button--yellow").attr("disabled", false);
-    }, 6000);
+    }, 9000);
 };
 
 myApp.disableOrangeButton = () => {
     $(".menu__button--orange").attr("disabled", true);
     setTimeout(() => {
         $(".menu__button--orange").attr("disabled", false);
-    }, 6000);
+    }, 9000);
 };
 
 myApp.disablePinkButton = () => {
     $(".menu__button--pink").attr("disabled", true);
     setTimeout(() => {
         $(".menu__button--pink").attr("disabled", false);
-    }, 6000);
+    }, 9000);
 };
 
 myApp.disableBlueButton = () => {
     $(".menu__button--blue").attr("disabled", true);
     setTimeout(() => {
         $(".menu__button--blue").attr("disabled", false);
-    }, 6000);
+    }, 9000);
 };
 
 myApp.disableButtons = () => {
@@ -146,19 +166,19 @@ myApp.errorOne = () => {
     let errorOneText = document.getElementById("opponent__error1");
     let curErrorOne = myApp.errorOneArray.indexOf(errorOneText.innerHTML);
     errorOneText.innerHTML = myApp.errorOneArray[(curErrorOne + 1) % myApp.errorOneArray.length];
-}
+};
 
 myApp.errorTwo = () => {
     let errorTwoText = document.getElementById("opponent__error2");
     let curErrorTwo = myApp.errorTwoArray.indexOf(errorTwoText.innerHTML);
     errorTwoText.innerHTML = myApp.errorTwoArray[(curErrorTwo + 1) % myApp.errorTwoArray.length];
-}
+};
 
 myApp.errorThree = () => {
     let errorThreeText = document.getElementById("opponent__error3");
     let curErrorThree = myApp.errorThreeArray.indexOf(errorThreeText.innerHTML);
     errorThreeText.innerHTML = myApp.errorThreeArray[(curErrorThree + 1) % myApp.errorThreeArray.length];
-}
+};
 
 myApp.styleText = (target, message, index, interval) => {
     if (index < message.length) {
@@ -167,10 +187,10 @@ myApp.styleText = (target, message, index, interval) => {
             myApp.styleText(target, message, index, interval);
         }, interval);
     }
-}
+};
 
 myApp.styleOne = () => {
-    myApp.styleText("#player__style1", "position: absolute", 0, 150);
+    myApp.styleText("#player__style1", "display: flex;", 0, 150);
     setTimeout(() => {
         $(".player__style").fadeOut(1200);
     }, 3000);
@@ -178,10 +198,10 @@ myApp.styleOne = () => {
         $(".player__style").text("");
         $(".player__style").css("display", "");
     }, 6000);   
-}
+};
 
 myApp.styleTwo = () => {
-    myApp.styleText("#player__style2", "color: red", 0, 150);
+    myApp.styleText("#player__style2", "color: hotpink;", 0, 150);
     setTimeout(() => {
         $(".player__style").fadeOut(1200);
     }, 3000);
@@ -189,10 +209,10 @@ myApp.styleTwo = () => {
         $(".player__style").text("");
         $(".player__style").css("display", "");
     }, 6000);
-}
+};
 
 myApp.styleThree = () => {
-    myApp.styleText("#player__style3", "width: 100%", 0, 150);
+    myApp.styleText("#player__style3", "padding: 15px;", 0, 150);
     setTimeout(() => {
         $(".player__style").fadeOut(1200);
     }, 3000);
@@ -200,7 +220,7 @@ myApp.styleThree = () => {
         $(".player__style").text("");
         $(".player__style").css("display", "");
     }, 6000);
-}
+};
 
 myApp.styleOption = () => {
     option = Math.floor(Math.random() * 6);
@@ -212,7 +232,26 @@ myApp.styleOption = () => {
     } else {
         myApp.styleThree();
     }
-}
+};
+
+myApp.specialText = () => {
+    myApp.styleText("#special__text", "Sweet()", 0, 100);
+    setTimeout(() => {
+        $(".special").animate({
+            top: "-200%",
+            left: "400%"
+        }, 1500);
+    }, 3000);
+    setTimeout(() => {
+        $(".special__text").fadeOut(1200);
+    }, 7500);
+    setTimeout(() => {
+        $(".special__text").text("");
+        $(".special__text").css("display", "");
+        $(".special").css("top", "35%");
+        $(".special").css("left", "50%");
+    }, 9000);
+};
 
 myApp.start = () => {
     $(".start__button").on("click", () => {
@@ -265,12 +304,17 @@ myApp.yellowButton = () => {
         myApp.disableButtons(); 
         myApp.player.regularAttack();
         if (myApp.opponent.health <= 0) {
-            $(".menu__text").html("Wild CSS defeated!");
-            myApp.battleTheme.pause();
-            myApp.victoryTheme.play();
             setTimeout(() => {
-                $(".victory").fadeIn(1500).css("display", "flex");
+                $(".opponent__image").fadeOut(1200);
             }, 3000);
+            setTimeout(() => {
+                $(".menu__text").html("Wild CSS defeated!");
+                myApp.battleTheme.pause();
+                myApp.victoryTheme.play();
+                setTimeout(() => {
+                    $(".victory").fadeIn(1500).css("display","flex");
+                }, 3000);
+            }, 4500);
         } else {
             myApp.opponent.regularAttack();
             myApp.defaultMenuText();
@@ -295,12 +339,17 @@ myApp.orangeButton = () => {
         myApp.disableButtons();
         myApp.player.specialAttack();
         if (myApp.opponent.health <= 0) {
-            $(".menu__text").html("Wild CSS defeated!");
-            myApp.battleTheme.pause();
-            myApp.victoryTheme.play();
             setTimeout(() => {
-                $(".victory").fadeIn(1500).css("display","flex");
+                $(".opponent__image").fadeOut(1200);
             }, 3000);
+            setTimeout(() => {
+                $(".menu__text").html("Wild CSS defeated!");
+                myApp.battleTheme.pause();
+                myApp.victoryTheme.play();
+                setTimeout(() => {
+                    $(".victory").fadeIn(1500).css("display","flex");
+                }, 3000);
+            }, 4500);
         } else {
             myApp.opponent.regularAttack();
             myApp.defaultMenuText();
@@ -355,6 +404,8 @@ myApp.restart = () => {
         $(".opponent__health-bar--fill").css("background-color", "green")
         $(".opponent__image").css("left", "-300%")
         $(".opponent__box").css("display", "none")
+        $(".opponent__image").css("display","block")
+        $(".opponent__capture").css("display", "none");
         myApp.player.health = 100;
         $(".player__health-bar--fill").css("width", "100%");
         $(".player__health-bar--fill").css("background-color", "green")

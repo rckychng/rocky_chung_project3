@@ -67,3 +67,17 @@
         }
     }
 }
+
+
+// MEDIA QUERY
+
+@media (max-width: 640px) {
+    .menu {
+        &__info {
+            padding: 10px;
+        }
+        &__button {
+            font-size: 0.8rem;
+        }
+    }
+}
