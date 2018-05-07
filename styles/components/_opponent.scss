@@ -160,3 +160,13 @@
         }
     }
 }
+
+@media (max-width: 450px) {
+    .opponent {
+        height: 23%;
+        &__box {
+            height: 60px;
+            border: 2.5px solid dimgrey;
+        }
+    }
+}

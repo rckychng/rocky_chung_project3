@@ -328,6 +328,15 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   .special__text {
     font-size: 3rem; } }
 
+@media (max-width: 450px) {
+  .battle {
+    width: 320px;
+    height: 500px; }
+  .special {
+    top: 20%; }
+    .special__text {
+      font-size: 2rem; } }
+
 html {
   font-size: 62.5%; }
 
@@ -359,6 +368,10 @@ p {
     font-size: 0.8rem; }
   p {
     font-size: 0.9rem; } }
+
+@media (max-width: 450px) {
+  h2 {
+    font-size: 1rem; } }
 
 .opponent {
   height: 37.5%;
@@ -536,6 +549,13 @@ p {
   .opponent__capture {
     width: 75%; } }
 
+@media (max-width: 450px) {
+  .opponent {
+    height: 23%; }
+    .opponent__box {
+      height: 60px;
+      border: 2.5px solid dimgrey; } }
+
 .player {
   height: 37.5%;
   display: -webkit-box;
@@ -694,6 +714,15 @@ p {
   .player__image {
     width: 65%; } }
 
+@media (max-width: 450px) {
+  .player {
+    height: 23%; }
+    .player__box {
+      height: 60px;
+      border: 2.5px solid dimgrey; }
+    .player__style {
+      font-size: 0.8rem; } }
+
 .menu {
   height: 25%;
   background-color: black;
@@ -719,8 +748,8 @@ p {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -775,3 +804,18 @@ p {
     padding: 10px; }
   .menu__button {
     font-size: 0.8rem; } }
+
+@media (max-width: 450px) {
+  .menu {
+    height: 54%; }
+    .menu__info {
+      height: 25%; }
+    .menu__buttons {
+      height: 75%;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap; }
+    .menu__button {
+      width: 100%;
+      height: 21%; } }

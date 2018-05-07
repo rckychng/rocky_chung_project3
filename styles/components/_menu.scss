@@ -17,7 +17,7 @@
     &__buttons {
         height: 50%;
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: row nowrap;
         justify-content: space-between;
         padding: 10px;
         padding-top: 0;
@@ -78,6 +78,23 @@
         }
         &__button {
             font-size: 0.8rem;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .menu {
+        height: 54%;
+        &__info {
+            height: 25%;
+        }
+        &__buttons {
+            height: 75%;
+            flex-flow: column nowrap;
+        }
+        &__button {
+            width: 100%;
+            height: 21%;
         }
     }
 }

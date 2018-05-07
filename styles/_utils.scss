@@ -160,3 +160,16 @@
         }
     }
 }
+
+@media (max-width: 450px) {
+    .battle {
+        width: 320px;
+        height: 500px;
+    }
+    .special {
+        top: 20%;
+        &__text {
+            font-size: 2rem;
+        }
+    }
+}

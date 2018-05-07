@@ -133,3 +133,16 @@
         }
     }
 }
+
+@media (max-width: 450px) {
+    .player {
+        height: 23%;
+        &__box {
+            height: 60px;
+            border: 2.5px solid dimgrey;
+        }
+        &__style {
+            font-size: 0.8rem;
+        }
+    }
+}
